@@ -87,11 +87,11 @@ export function removeRationCard(registry, cardId) {
   ) {
     return false;
   }
-  if (registry.hasOwnProperty(cardId)) {
-    delete registry.cardId
-    return true
-  }
-    return false
 
-
+  if (Object.prototype.hasOwnProperty.call(registry, cardId)) {
+    delete registry[cardId];
+    return true;
   }
+
+  return false;
+}
